@@ -98,6 +98,9 @@ public class Controller implements Initializable {
         datelabel.setText( "  " );
         labelmain.setText("  ");
         labelsub.setText("  ");
+        labelmain.getText();
+        labelsub.getText();
+        labelsub.getText();
 
     }
 
