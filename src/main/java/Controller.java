@@ -91,6 +91,16 @@ public class Controller implements Initializable {
         insert.saveDB(onetext, twotext, datevalu, id);
 
     }
+    @FXML
+    private Button clear;
+    @FXML
+    public void handclear(ActionEvent event){
+        datelabel.setText( "  " );
+        labelmain.setText("  ");
+        labelsub.setText("  ");
+
+    }
+
 
     @FXML
     private Button viewDB;
@@ -107,6 +117,7 @@ public class Controller implements Initializable {
         }
 
     }
+
 
 
 
