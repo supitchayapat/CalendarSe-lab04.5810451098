@@ -1,0 +1,35 @@
+.root{
+ -fx-background-color:lightseagreen;
+ }
+.menu-bar {
+      -fx-background-color:darkcyan;
+      /*-fx-border-width:2;*/
+    }
+.menu-bar .label {
+       -fx-text-fill:#ffffff;
+    }
+.menu-bar .label:hover {
+       -fx-text-fill:yellow;
+    }
+
+.menu-item {
+       -fx-background-color:#237a72;
+       -fx-border-color: #237a72;
+}
+.label{
+
+     -fx-background-image: url("file:/E:/se/Calenda/target/classes/Calendar-PNG-File.png");
+     -fx-background-size: 280px 230px;
+
+}
+
+.button {
+    -fx-background-color : mediumaquamarine;
+    -fx-text-fill        : #E1F5FE;
+    -fx-font-weight      : 900;
+     -fx-font-size: 20px ;
+    }
+
+.button:hover {
+    -fx-background-color : #01579B;
+    }
