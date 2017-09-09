@@ -82,7 +82,7 @@ public class Controller implements Initializable {
     private Label labelmain;
     @FXML
     private Label labelsub;
-    addeventdaily eventspeacial = new addeventdaily();
+//    addeventdaily eventspeacial = new addeventdaily();
 
     @FXML
 
@@ -95,8 +95,8 @@ public class Controller implements Initializable {
         datelabel.setText( new String( datevalu ) );
         labelmain.setText( new String( twotext ) );
         labelsub.setText( new String( onetext ) );
-        eventspeacial.datepickevent();
-        eventspeacial.typeevent();
+//        eventspeacial.datepickevent();
+//        eventspeacial.typeevent();
 
 
         String getvaluess = String.format( datevalu );
