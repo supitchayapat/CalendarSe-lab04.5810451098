@@ -63,23 +63,23 @@ public class JdbcSQLiteConnection {
         }
     }
 
-    public void editDB(int id, String dateString, String textTopic, String textmain){
-        try{
-            Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:bookstore.db";
-            Connection connection = DriverManager.getConnection(dbURL);
-            if (connection != null){
-                String query = "update event set Date=\'" +dateString+ "\' ,Topic=\'" +textTopic+ "\' ,main=\'" +textmain+ "\' where ID == \'" +id+ "\'";
-                PreparedStatement p = connection.prepareStatement(query);
-                p.executeUpdate();
-                connection.close();
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void editDB(int id, String dateString, String textTopic, String textmain){
+//        try{
+//            Class.forName("org.sqlite.JDBC");
+//            String dbURL = "jdbc:sqlite:bookstore.db";
+//            Connection connection = DriverManager.getConnection(dbURL);
+//            if (connection != null){
+//                String query = "update event set Date=\'" +dateString+ "\' ,Topic=\'" +textTopic+ "\' ,main=\'" +textmain+ "\' where ID == \'" +id+ "\'";
+//                PreparedStatement p = connection.prepareStatement(query);
+//                p.executeUpdate();
+//                connection.close();
+//            }
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void deleteDB(int id){
         try{
