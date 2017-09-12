@@ -14,10 +14,10 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="800.0" stylesheets="@Controller.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
         <!--<Button onAction="#searchEvent" layoutX="602.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="180.0" text="Search" />-->
-        <TextField fx:id="searchText" layoutX="10.0" layoutY="14.0" prefHeight="31.0" prefWidth="597.0" promptText="Search your event"/>
+        <TextField fx:id="searchText" layoutX="10.0" layoutY="14.0" prefHeight="31.0" prefWidth="597.0" promptText="Search your event" />
         <DatePicker fx:id="datePicker" layoutX="9.0" layoutY="53.0" prefHeight="44.0" prefWidth="217.0" promptText=" Year/Month/Date " />
         <!--<Button fx:id="Clicktexttwo" layoutX="182.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleClearbuttntwoClear" prefHeight="39.0" prefWidth="209.0" text="Clear" />-->
-        <Button fx:id="addevent" layoutX="10.0" layoutY="506.0" mnemonicParsing="false" onAction="#handAddEvent" prefHeight="39.0" prefWidth="172.0" text="Add" />
+        <Button fx:id="addevent" layoutX="10.0" layoutY="506.0" mnemonicParsing="false" onAction="#handAddEvent" prefHeight="39.0" prefWidth="373.0" text="Add" />
         <TextField fx:id="texttwo" alignment="TOP_LEFT" depthTest="DISABLE" layoutX="10.0" layoutY="112.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="326.0" prefWidth="373.0" promptText="เนื้อหานัดหมาย ">
             <cursor>
                 <Cursor fx:constant="OPEN_HAND" />
@@ -48,7 +48,7 @@
                 </TableColumn>
             </columns>
         </TableView>
-        <Button layoutX="610.0" layoutY="502.0" mnemonicParsing="false" onAction="#handClearTable" prefHeight="39.0" prefWidth="172.0" text="Delete All" />
+        <Button layoutX="409.0" layoutY="502.0" mnemonicParsing="false" onAction="#handClearTable" prefHeight="39.0" prefWidth="373.0" text="Delete All" />
         <MenuButton fx:id="menuButton" layoutX="14.0" layoutY="447.0" onAction="#menuList" prefHeight="39.0" prefWidth="373.0" text="Notification">
             <items>
                 <MenuItem fx:id="item1" mnemonicParsing="false" onAction="#menuList" text="Every Week" />
