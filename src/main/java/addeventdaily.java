@@ -41,7 +41,7 @@ public class addeventdaily extends Controller {
             getDates();
             getMonths();
             getYearss();
-            textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+            returndate(yearss,months,dates);
             dbadd();
         }
 
@@ -65,6 +65,10 @@ public class addeventdaily extends Controller {
 
     }
 
+    public void returndate(Integer yearsss,Integer monthss,Integer datess){
+        textcalendar.datevalu = yearsss + "-" + monthss + "-" + datess;
+    }
+
     public void dbadd() {
         JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
         int id = insert.getCreateID();
@@ -76,20 +80,20 @@ public class addeventdaily extends Controller {
             for (int i = months; months <= 12; ) {
                 if (dates == 31) {
                     if (checkmonth( months )) {
-                        textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                        returndate(yearss,months,dates);
                         dbadd();
                         dates = 7;
                         months = months + 1;
                     } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             dates = 3;
-                            textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                            returndate(yearss,months,dates);
                             dbadd();
                             dates = dates + 7;
                             months = months + 1;
                         } else {
                             dates = 1;
-                            textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                            returndate(yearss,months,dates);
                             dbadd();
                             dates = 6;
                             months = months + 1;
@@ -98,19 +102,19 @@ public class addeventdaily extends Controller {
 
                 } else if (dates == 30) {
                     if ((checkmonth( months ))) {
-                        textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                        returndate(yearss,months,dates);
                         dbadd();
                         dates = 6;
                         months = months + 1;
                     } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             dates = 2;
-                            textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                            returndate(yearss,months,dates);
                             dbadd();
                             dates = dates + 7;
                             months = months + 1;
                         } else {
-                            textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                            returndate(yearss,months,dates);
                             dbadd();
                             dates = 7;
                             months = months + 1;
@@ -119,19 +123,19 @@ public class addeventdaily extends Controller {
                     }
                 } else if (dates == 29) {
                     if ((checkmonth( months ))) {
-                        textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                        returndate(yearss,months,dates);
                         dbadd();
                         dates = 5;
                         months = months + 1;
                     } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             dates = 1;
-                            textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                            returndate(yearss,months,dates);
                             dbadd();
                             dates = dates + 7;
                             months = months + 1;
                         } else {
-                            textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                            returndate(yearss,months,dates);
                             dbadd();
                             dates = 6;
                             months = months + 1;
@@ -139,7 +143,7 @@ public class addeventdaily extends Controller {
                     }
                 } else {
                     if ((checkmonth( months ))) {
-                        textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                        returndate(yearss,months,dates);
                         dbadd();
                         dates = dates + 7;
                         if (dates > 31) {
@@ -153,7 +157,7 @@ public class addeventdaily extends Controller {
                         }
                     } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
-                            textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                            returndate(yearss,months,dates);
                             dbadd();
                             dates = dates + 7;
                             if (dates > 28) {
@@ -165,7 +169,7 @@ public class addeventdaily extends Controller {
                             } else if (dates < 28) {
                             }
                         } else {
-                            textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                            returndate(yearss,months,dates);
                             dbadd();
                             dates = dates + 7;
                             if (dates > 30) {
@@ -192,7 +196,7 @@ public class addeventdaily extends Controller {
             for (int i = months; i <= 12; i++) {
                 if (dates == 31) {
                     if ((checkmonth( months ))) {
-                        textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                        returndate(yearss,months,dates);
                         dbadd();
                         months = months + 1;
                     } else {
@@ -203,12 +207,12 @@ public class addeventdaily extends Controller {
                         months = months + 1;
 
                     } else {
-                        textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                        returndate(yearss,months,dates);
                         dbadd();
                         months = months + 1;
                     }
                 } else {
-                    textcalendar.datevalu = yearss + "-" + months + "-" + dates;
+                    returndate(yearss,months,dates);
                     dbadd();
                     months = months + 1;
                 }
