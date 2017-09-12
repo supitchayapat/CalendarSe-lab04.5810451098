@@ -36,6 +36,5 @@
       <Button fx:id="delete" layoutX="396.0" layoutY="380.0" mnemonicParsing="false" onAction="#handdelete" prefHeight="39.0" prefWidth="92.0" text="Delete" />
       <TextField fx:id="fiew" layoutX="25.0" layoutY="380.0" prefHeight="39.0" prefWidth="280.0" promptText="ค้นหานัดหมาย/id นัดหมายเพื่อลบ" text="" />
       <Button fx:id="Back" layoutX="487.0" layoutY="380.0" mnemonicParsing="false" onAction="#handback" prefHeight="39.0" prefWidth="92.0" text="Back" />
-      <Button fx:id="searchevent" layoutX="303.0" layoutY="380.0" mnemonicParsing="false" onAction="#handlesearch" prefHeight="39.0" prefWidth="92.0" text="Search" />
    </children>
 </AnchorPane>

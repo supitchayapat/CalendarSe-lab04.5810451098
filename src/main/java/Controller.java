@@ -136,6 +136,6 @@ public class Controller implements Initializable {
     @FXML
 
     public void clicktrpealert(ActionEvent event) {
-        clicktype.getStyleClass().add("click_type" );
+        clicktype.getStyleClass().add( "click_type" );
     }
 }

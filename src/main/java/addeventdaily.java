@@ -37,15 +37,18 @@ public class addeventdaily extends Controller {
             eventdays();
         } else if (boox.getValue().equals( "Every Year" )) {
             eventyears();
-        } else if(boox.getValue().equals( "Noting" )){
+        } else if (boox.getValue().equals( "Noting" )) {
             getDates();
             getMonths();
             getYearss();
             textcalendar.datevalu = yearss + "-" + months + "-" + dates;
-            JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
-            int id = insert.getCreateID();
-            insert.saveDB( textcalendar.onetext, textcalendar.twotext, textcalendar.datevalu, id );
+            dbadd();
         }
+
+    }
+
+    public boolean checkmonth(int monthss) {
+        return ((monthss == 1) || (monthss == 3) || (monthss == 5) || (monthss == 7) || (monthss == 8) || (monthss == 10) || (monthss == 12));
 
     }
 
@@ -56,9 +59,7 @@ public class addeventdaily extends Controller {
         getYearss();
         for (int k = 1; k <= 10; k++) {
             textcalendar.datevalu = yearss + "-" + months + "-" + dates;
-            JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
-            int id = insert.getCreateID();
-            insert.saveDB( textcalendar.onetext, textcalendar.twotext, textcalendar.datevalu, id );
+            dbadd();
             yearss = yearss + 1;
         }
 
@@ -74,12 +75,12 @@ public class addeventdaily extends Controller {
         for (int k = 1; k <= 2; k++) {
             for (int i = months; months <= 12; ) {
                 if (dates == 31) {
-                    if ((months == 1) || (months == 3) || (months == 5) || (months == 7) || (months == 8) || (months == 10) || (months == 12)) {
+                    if (checkmonth( months )) {
                         textcalendar.datevalu = yearss + "-" + months + "-" + dates;
                         dbadd();
                         dates = 7;
                         months = months + 1;
-                    } else if (((months == 2) || (months == 4) || (months == 6) || (months == 9) || (months == 11) )) {
+                    } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             dates = 3;
                             textcalendar.datevalu = yearss + "-" + months + "-" + dates;
@@ -96,12 +97,12 @@ public class addeventdaily extends Controller {
                     }
 
                 } else if (dates == 30) {
-                    if ((months == 1) || (months == 3) || (months == 5) || (months == 7) || (months == 8) || (months == 10) || (months == 12)) {
+                    if ((checkmonth( months ))) {
                         textcalendar.datevalu = yearss + "-" + months + "-" + dates;
                         dbadd();
                         dates = 6;
                         months = months + 1;
-                    } else if (((months == 2) || (months == 4) || (months == 6) || (months == 9) || (months == 11) )) {
+                    } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             dates = 2;
                             textcalendar.datevalu = yearss + "-" + months + "-" + dates;
@@ -117,33 +118,27 @@ public class addeventdaily extends Controller {
                         }
                     }
                 } else if (dates == 29) {
-                    if ((months == 1) || (months == 3) || (months == 5) || (months == 7) || (months == 8) || (months == 10) || (months == 12)) {
+                    if ((checkmonth( months ))) {
                         textcalendar.datevalu = yearss + "-" + months + "-" + dates;
-                        JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
-                        int id = insert.getCreateID();
-                        insert.saveDB( textcalendar.onetext, textcalendar.twotext, textcalendar.datevalu, id );
+                        dbadd();
                         dates = 5;
                         months = months + 1;
-                    } else if (((months == 2) || (months == 4) || (months == 6) || (months == 9) || (months == 11) )) {
+                    } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             dates = 1;
                             textcalendar.datevalu = yearss + "-" + months + "-" + dates;
-                            JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
-                            int id = insert.getCreateID();
-                            insert.saveDB( textcalendar.onetext, textcalendar.twotext, textcalendar.datevalu, id );
+                            dbadd();
                             dates = dates + 7;
                             months = months + 1;
                         } else {
                             textcalendar.datevalu = yearss + "-" + months + "-" + dates;
-                            JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
-                            int id = insert.getCreateID();
-                            insert.saveDB( textcalendar.onetext, textcalendar.twotext, textcalendar.datevalu, id );
+                            dbadd();
                             dates = 6;
                             months = months + 1;
                         }
                     }
                 } else {
-                    if ((months == 1) || (months == 3) || (months == 5) || (months == 7) || (months == 8) || (months == 10) || (months == 12)) {
+                    if ((checkmonth( months ))) {
                         textcalendar.datevalu = yearss + "-" + months + "-" + dates;
                         dbadd();
                         dates = dates + 7;
@@ -156,7 +151,7 @@ public class addeventdaily extends Controller {
                         } else if (dates < 31) {
                             System.out.println( dates );
                         }
-                    } else if (((months == 2) || (months == 4) || (months == 6) || (months == 9) || (months == 11) )) {
+                    } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             textcalendar.datevalu = yearss + "-" + months + "-" + dates;
                             dbadd();
@@ -194,9 +189,9 @@ public class addeventdaily extends Controller {
 
     public void eventmonth() {
         for (int k = 1; k <= 2; k++) {
-            for (int i = months ; i <= 12; i++) {
+            for (int i = months; i <= 12; i++) {
                 if (dates == 31) {
-                    if ((months == 1) || (months == 2) || (months == 3) || (months == 5) || (months == 7) || (months == 8) || (months == 10) || (months == 12)) {
+                    if ((checkmonth( months ))) {
                         textcalendar.datevalu = yearss + "-" + months + "-" + dates;
                         dbadd();
                         months = months + 1;
