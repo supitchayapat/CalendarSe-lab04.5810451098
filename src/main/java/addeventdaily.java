@@ -30,19 +30,21 @@ public class addeventdaily extends Controller {
         return months;
     }
 
-    public void typeevent(ChoiceBox<String> boox) {
-        if (boox.getValue().equals( "Every Month" )) {
+    private String one = "";
+    private String two = "";
+
+    public void typeevent(String boox, String onetext, String twotext) {
+        one = onetext;
+        two = twotext;
+        if (boox.equals( "Every Month" )) {
             eventmonth();
-        } else if (boox.getValue().equals( "Every Day" )) {
+        } else if (boox.equals( "Every Week" )) {
             eventdays();
-        } else if (boox.getValue().equals( "Every Year" )) {
+        } else if (boox.equals( "Every Year" )) {
             eventyears();
-        } else if (boox.getValue().equals( "Noting" )) {
-            getDates();
-            getMonths();
-            getYearss();
-            returndate(yearss,months,dates);
-            dbadd();
+        } else if (boox.equals( "Noting" )) {
+            returndate( yearss, months, dates );
+            dbadd( one, two );
         }
 
     }
@@ -59,20 +61,21 @@ public class addeventdaily extends Controller {
         getYearss();
         for (int k = 1; k <= 10; k++) {
             textcalendar.datevalu = yearss + "-" + months + "-" + dates;
-            dbadd();
+            dbadd( one, two);
+;
             yearss = yearss + 1;
         }
 
     }
 
-    public void returndate(Integer yearsss,Integer monthss,Integer datess){
+    public void returndate(Integer yearsss, Integer monthss, Integer datess) {
         textcalendar.datevalu = yearsss + "-" + monthss + "-" + datess;
     }
 
-    public void dbadd() {
+    public void dbadd(String one, String two) {
         JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
         int id = insert.getCreateID();
-        insert.saveDB( textcalendar.onetext, textcalendar.twotext, textcalendar.datevalu, id );
+        insert.saveDB( datevalu, one, two, id );
     }
 
     public void eventdays() {
@@ -80,21 +83,23 @@ public class addeventdaily extends Controller {
             for (int i = months; months <= 12; ) {
                 if (dates == 31) {
                     if (checkmonth( months )) {
-                        returndate(yearss,months,dates);
-                        dbadd();
+                        returndate( yearss, months, dates );
+                        dbadd( one, two);
+;
                         dates = 7;
                         months = months + 1;
                     } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             dates = 3;
-                            returndate(yearss,months,dates);
-                            dbadd();
+                            returndate( yearss, months, dates );
+                            dbadd( one, two);
+;
                             dates = dates + 7;
                             months = months + 1;
                         } else {
                             dates = 1;
-                            returndate(yearss,months,dates);
-                            dbadd();
+                            returndate( yearss, months, dates );
+                            dbadd( one, two );
                             dates = 6;
                             months = months + 1;
                         }
@@ -102,20 +107,21 @@ public class addeventdaily extends Controller {
 
                 } else if (dates == 30) {
                     if ((checkmonth( months ))) {
-                        returndate(yearss,months,dates);
-                        dbadd();
+                        returndate( yearss, months, dates );
+                        dbadd( one, two );
                         dates = 6;
                         months = months + 1;
                     } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             dates = 2;
-                            returndate(yearss,months,dates);
-                            dbadd();
+                            returndate( yearss, months, dates );
+                            dbadd( one, two );
                             dates = dates + 7;
                             months = months + 1;
                         } else {
-                            returndate(yearss,months,dates);
-                            dbadd();
+                            returndate( yearss, months, dates );
+                            dbadd( one, two );
+
                             dates = 7;
                             months = months + 1;
 
@@ -123,28 +129,32 @@ public class addeventdaily extends Controller {
                     }
                 } else if (dates == 29) {
                     if ((checkmonth( months ))) {
-                        returndate(yearss,months,dates);
-                        dbadd();
+                        returndate( yearss, months, dates );
+                        dbadd( one, two );
+
                         dates = 5;
                         months = months + 1;
                     } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
                             dates = 1;
-                            returndate(yearss,months,dates);
-                            dbadd();
+                            returndate( yearss, months, dates );
+                            dbadd( one, two);
+;
                             dates = dates + 7;
                             months = months + 1;
                         } else {
-                            returndate(yearss,months,dates);
-                            dbadd();
+                            returndate( yearss, months, dates );
+                            dbadd( one, two);
+;
                             dates = 6;
                             months = months + 1;
                         }
                     }
                 } else {
                     if ((checkmonth( months ))) {
-                        returndate(yearss,months,dates);
-                        dbadd();
+                        returndate( yearss, months, dates );
+                        dbadd( one, two);
+;
                         dates = dates + 7;
                         if (dates > 31) {
                             dates = dates - 7;
@@ -157,8 +167,9 @@ public class addeventdaily extends Controller {
                         }
                     } else if (!(checkmonth( months ))) {
                         if ((months == 2)) {
-                            returndate(yearss,months,dates);
-                            dbadd();
+                            returndate( yearss, months, dates );
+                            dbadd( one, two);
+;
                             dates = dates + 7;
                             if (dates > 28) {
                                 dates = dates - 7;
@@ -169,8 +180,9 @@ public class addeventdaily extends Controller {
                             } else if (dates < 28) {
                             }
                         } else {
-                            returndate(yearss,months,dates);
-                            dbadd();
+                            returndate( yearss, months, dates );
+                            dbadd( one, two);
+;
                             dates = dates + 7;
                             if (dates > 30) {
                                 dates = dates - 7;
@@ -196,8 +208,9 @@ public class addeventdaily extends Controller {
             for (int i = months; i <= 12; i++) {
                 if (dates == 31) {
                     if ((checkmonth( months ))) {
-                        returndate(yearss,months,dates);
-                        dbadd();
+                        returndate( yearss, months, dates );
+                        dbadd( one, two);
+;
                         months = months + 1;
                     } else {
                         months = months + 1;
@@ -207,13 +220,14 @@ public class addeventdaily extends Controller {
                         months = months + 1;
 
                     } else {
-                        returndate(yearss,months,dates);
-                        dbadd();
+                        returndate( yearss, months, dates );
+                        dbadd( one, two);
+;
                         months = months + 1;
                     }
                 } else {
-                    returndate(yearss,months,dates);
-                    dbadd();
+                    returndate( yearss, months, dates );
+                    dbadd( one, two );
                     months = months + 1;
                 }
             }
