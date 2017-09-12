@@ -1,6 +1,7 @@
 import com.sun.org.omg.CORBA.Initializer;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+    @FXML
+    private TableView db ;
+    JdbcSQLiteConnection dbconnect = new JdbcSQLiteConnection();
+    ObservableList<Dbshow> listdb  = dbconnect.loadDB();
+    private int one;
 
     @FXML
     private DatePicker datePicker;
@@ -38,6 +44,9 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        ObservableList<Dbshow> data = FXCollections.observableArrayList();
+        data = listdb;
+        db.setItems( data );
         datePicker.setConverter( new StringConverter<LocalDate>() {
             @Override
             public String toString(LocalDate t) {
@@ -82,12 +91,18 @@ public class Controller implements Initializable {
     private Label labelmain;
     @FXML
     private Label labelsub;
-//    addeventdaily eventspeacial = new addeventdaily();
+    //    addeventdaily eventspeacial = new addeventdaily();
+//    @FXML
+//    private TableView db;
+//    JdbcSQLiteConnection dbconnect = new JdbcSQLiteConnection();
+//    ObservableList<Dbshow> listdb = dbconnect.loadDB();
+//    private int one;
 
     @FXML
 
     public void handAddEvent(ActionEvent event) {
         addeventdaily eventspeacial = new addeventdaily();
+
         String onetext = new String( textone.getText() );
         String twotext = new String( texttwo.getText() );
         String datevalu = new String( String.valueOf( datePicker.getValue() ) );
@@ -96,6 +111,16 @@ public class Controller implements Initializable {
         labelsub.setText( new String( onetext ) );
         eventspeacial.datepickevent( datevalu );
         eventspeacial.typeevent( choosebox );
+        javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("simple.fxml"));
+        try {
+            stage.setScene(new Scene(loader.load(), 800, 566));
+            stage.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
 
 
     }
@@ -109,7 +134,7 @@ public class Controller implements Initializable {
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader( getClass().getResource( "DBSHOW.fxml" ) );
         try {
-            stage.setScene( new Scene( loader.load(), 601, 450 ) );
+            stage.setScene( new Scene( loader.load(), 800, 566 ) );
             stage.show();
         } catch (IOException e1) {
             e1.printStackTrace();

@@ -6,16 +6,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="611.0" stylesheets="@Controller.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="800.0" stylesheets="@Controller.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
-        <MenuBar prefHeight="44.0" prefWidth="611.0">
+        <MenuBar prefHeight="44.0" prefWidth="800.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -34,22 +36,16 @@
                 </Menu>
             </menus>
         </MenuBar>
-      <DatePicker fx:id="datePicker" layoutX="36.0" layoutY="53.0" prefHeight="44.0" prefWidth="256.0" promptText=" Year/Month/Date " />
-      <Button fx:id="Clicktexttwo" layoutX="256.0" layoutY="199.0" mnemonicParsing="false" onAction="#handleClearbuttntwoClear" prefHeight="39.0" prefWidth="140.0" text="Clear" />
-      <Button fx:id="addevent" layoutX="410.0" layoutY="200.0" mnemonicParsing="false" onAction="#handAddEvent" prefHeight="39.0" prefWidth="140.0" text="Add" />
-      <TextField fx:id="texttwo" alignment="TOP_LEFT" depthTest="DISABLE" layoutX="37.0" layoutY="104.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="91.0" prefWidth="513.0" promptText="เนื้อหานัดหมาย " text="">
+      <DatePicker fx:id="datePicker" layoutX="9.0" layoutY="53.0" prefHeight="44.0" prefWidth="217.0" promptText=" Year/Month/Date " />
+      <Button fx:id="Clicktexttwo" layoutX="182.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleClearbuttntwoClear" prefHeight="39.0" prefWidth="209.0" text="Clear" />
+      <Button fx:id="addevent" layoutX="10.0" layoutY="506.0" mnemonicParsing="false" onAction="#handAddEvent" prefHeight="39.0" prefWidth="172.0" text="Add" />
+      <TextField fx:id="texttwo" alignment="TOP_LEFT" depthTest="DISABLE" layoutX="10.0" layoutY="112.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="326.0" prefWidth="373.0" promptText="เนื้อหานัดหมาย " text="">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </TextField>
-      <TextField fx:id="textone" layoutX="302.0" layoutY="55.0" prefHeight="44.0" prefWidth="247.0" promptText=" หัวข้อนัดหมายงาน  " />
-      <!--<Button fx:id="Clicktextone" layoutX="92.0" layoutY="192.0" mnemonicParsing="false" onAction="#handleClearbuttnClear" prefHeight="25.0" prefWidth="67.0" text="Clear" />-->
-      <Label layoutX="221.0" layoutY="316.0" prefHeight="56.0" prefWidth="185.0" />
-      <Label fx:id="labelmain" layoutX="204.0" layoutY="317.0" prefHeight="149.0" prefWidth="169.0" />
-      <Label fx:id="labelsub" layoutX="372.0" layoutY="322.0" prefHeight="140.0" prefWidth="185.0" />
-      <Label fx:id="datelabel" layoutX="36.0" layoutY="318.0" prefHeight="149.0" prefWidth="177.0" textFill="#c36464" />
-      <Button fx:id="viewDB" layoutX="42.0" layoutY="259.0" mnemonicParsing="false" onAction="#handviewdb" prefHeight="56.0" prefWidth="513.0" text="View Appointment" />
-      <ChoiceBox fx:id="choosebox" layoutX="38.0" layoutY="201.0" onAction="#handaddweek" prefHeight="39.0" prefWidth="204.0">
+      <TextField fx:id="textone" layoutX="229.0" layoutY="55.0" prefHeight="44.0" prefWidth="158.0" promptText=" หัวข้อนัดหมายงาน  " />
+      <ChoiceBox fx:id="choosebox" layoutX="14.0" layoutY="447.0" onAction="#handaddweek" prefHeight="39.0" prefWidth="373.0">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Every Day" />
@@ -60,7 +56,31 @@
             </FXCollections>
         </items>
         </ChoiceBox>
-   
+        <TableView fx:id="db" layoutX="409.0" layoutY="55.0" prefHeight="480.0" prefWidth="373.0">
+            <columns>
+                <TableColumn prefWidth="85.0" text="Main">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="6.0" prefWidth="97.0" text="Topic">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="topic" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="6.0" prefWidth="89.0" text="Date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="main" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="6.0" prefWidth="101.0" text="id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
      
 
 

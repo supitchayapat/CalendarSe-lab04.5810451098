@@ -21,7 +21,7 @@ public class MainContro {
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("DBSHOW.fxml"));
         try {
-            stage.setScene(new Scene(loader.load(), 601, 450));
+            stage.setScene(new Scene(loader.load(), 800, 566));
             stage.show();
         } catch (IOException e1) {
             e1.printStackTrace();
@@ -36,7 +36,7 @@ public class MainContro {
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         try {
-            stage.setScene(new Scene(loader.load(), 601, 450));
+            stage.setScene(new Scene(loader.load(), 800, 566));
             stage.show();
         } catch (IOException e1) {
             e1.printStackTrace();
