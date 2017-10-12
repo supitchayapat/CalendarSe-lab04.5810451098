@@ -75,7 +75,7 @@ public class addeventdaily extends Controller {
     public void dbadd(String one, String two) {
         JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
         int id = insert.getCreateID();
-        insert.saveDB( datevalu, one, two, id );
+        insert.saveDB( textcalendar.datevalu, one, two, id );
     }
 
     public void eventdays() {

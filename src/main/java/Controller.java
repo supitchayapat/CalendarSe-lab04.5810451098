@@ -101,7 +101,7 @@ public class Controller implements Initializable {
 
         eventspeacial.datepickevent( datevalu );
         eventspeacial.typeevent(valuemenu, onetext, twotext);
-        javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
+        Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         try {
@@ -117,7 +117,7 @@ public class Controller implements Initializable {
     public void handClearTable(ActionEvent event){
         JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
         insert.cleartableDB();
-        javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
+        Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         try {

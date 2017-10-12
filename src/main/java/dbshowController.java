@@ -33,7 +33,7 @@ public class dbshowController implements Initializable {
     private Button Back;
     @FXML
     public void handback(ActionEvent event){
-        javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
+        Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Mainn.fxml"));
         try {
@@ -53,7 +53,7 @@ public class dbshowController implements Initializable {
         JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
         Integer one = new Integer(fiew.getText());
         insert.deleteDB( one );
-        javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
+        Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("DBSHOW.fxml"));
         try {

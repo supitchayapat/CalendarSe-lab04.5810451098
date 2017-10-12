@@ -17,9 +17,9 @@
        -fx-border-color: #237a72;
 }
 .label{
+   -fx-background-image: url("../../src/calendar-icon.png");
+     -fx-background-size: 367px 347px;
 
-     -fx-background-image: url("file:/E:/se/Calenda/target/classes/Calendar-PNG-File.png");
-     -fx-background-size: 637px 347px;
 
 }
 

@@ -17,7 +17,7 @@ public class MainContro {
     private Button addle;
     @FXML
     public void han(ActionEvent event) {
-        javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
+        Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("DBSHOW.fxml"));
         try {
@@ -32,7 +32,7 @@ public class MainContro {
     private Button creat;
     @FXML
     public void hancreatapp(ActionEvent event) {
-        javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
+        Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         try {
