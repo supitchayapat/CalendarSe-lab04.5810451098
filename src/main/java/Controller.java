@@ -1,14 +1,13 @@
 import com.sun.org.omg.CORBA.Initializer;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
@@ -20,21 +19,28 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+//    @FXML
+//    private TableView db ;
+//    JdbcSQLiteConnection dbconnect = new JdbcSQLiteConnection();
+//    ObservableList<Dbshow> listdb  = dbconnect.loadDB();
+//    private int one;
+
     @FXML
     private DatePicker datePicker;
     @FXML
     private TextField textone;
     @FXML
     private Button Clicktextone;
-
     @FXML
     private Button Clicktexttwo;
     @FXML
     private TextField texttwo;
     @FXML
     private Button addevent;
-
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "yyyy-MM-dd" );
+    public String datevalu;
+    public String onetext;
+    public String twotext;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -59,69 +65,126 @@ public class Controller implements Initializable {
         datePicker.setOnAction( (ActionEvent event) -> {
             System.out.println( formatter.format( datePicker.getValue() ) );
         } );
+        ObservableList<Dbshow> data = FXCollections.observableArrayList();
+        data = listdb;
+        db.setItems( data );
     }
 
-    @FXML
-    public void handleClearbuttnClear(ActionEvent e) {
-        textone.setText( new String( "" ) );
-    }
 
-    @FXML
-    public void handleClearbuttntwoClear(ActionEvent event) {
-        texttwo.setText( new String("") );
 
-    }
+
     @FXML
     private Label datelabel;
     @FXML
     private Label labelmain;
     @FXML
     private Label labelsub;
+    //    addeventdaily eventspeacial = new addeventdaily();
+//    @FXML
+//    private TableView db;
+//    JdbcSQLiteConnection dbconnect = new JdbcSQLiteConnection();
+//    ObservableList<Dbshow> listdb = dbconnect.loadDB();
+//    private int one;
+    @FXML
+    private TableView db ;
+    JdbcSQLiteConnection dbconnect = new JdbcSQLiteConnection();
+    ObservableList<Dbshow> listdb  = dbconnect.loadDB();
+    private int one;
+
     @FXML
 
     public void handAddEvent(ActionEvent event) {
-        String onetext = new String(textone.getText());
-        String twotext = new String(texttwo.getText());
-        String datevalu = new String( String.valueOf( datePicker.getValue() ) );
-        datelabel.setText( new String(datevalu) );
-        labelmain.setText(new String(twotext));
-        labelsub.setText(new String(onetext));
-        JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
-        int id = insert.getCreateID();
-        insert.saveDB(onetext, twotext, datevalu, id);
+        addeventdaily eventspeacial = new addeventdaily();
+        onetext = textone.getText();
+        twotext = texttwo.getText();
+        String datevalu = String.valueOf(datePicker.getValue());
 
-    }
-    @FXML
-    private Button clear;
-    @FXML
-    public void handclear(ActionEvent event){
-        datelabel.setText( "  " );
-        labelmain.setText("  ");
-        labelsub.setText("  ");
-        labelmain.getText();
-        labelsub.getText();
-        labelsub.getText();
-
-    }
-
-
-    @FXML
-    private Button viewDB;
-    @FXML
-    public void handviewdb(ActionEvent event){
+        eventspeacial.datepickevent( datevalu );
+        eventspeacial.typeevent(valuemenu, onetext, twotext);
         javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("DBSHOW.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         try {
-            stage.setScene(new Scene(loader.load(), 601, 450));
+            stage.setScene(new Scene(loader.load(), 800, 566));
             stage.show();
         } catch (IOException e1) {
             e1.printStackTrace();
         }
 
+
+
+    }
+    public void handClearTable(ActionEvent event){
+        JdbcSQLiteConnection insert = new JdbcSQLiteConnection();
+        insert.cleartableDB();
+        javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        try {
+            stage.setScene(new Scene(loader.load(), 800, 566));
+            stage.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
     }
 
+//    @FXML
+//    private Button viewDB;
+//
+//    @FXML
+//    public void handviewdb(ActionEvent event) {
+//        javafx.scene.control.Button b = (javafx.scene.control.Button) event.getSource();
+//        Stage stage = (Stage) b.getScene().getWindow();
+//        FXMLLoader loader = new FXMLLoader( getClass().getResource( "DBSHOW.fxml" ) );
+//        try {
+//            stage.setScene( new Scene( loader.load(), 800, 566 ) );
+//            stage.show();
+//        } catch (IOException e1) {
+//            e1.printStackTrace();
+//        }
+//
+//    }
 
+    String getvalue;
 
+    @FXML
+    public ChoiceBox<String> choosebox;
 
+    @FXML
+    public void handaddweek(ActionEvent event) {
+        getvalue = choosebox.getValue();
+        System.out.println( choosebox.getValue() );
+
+    }
+    @FXML
+    private MenuButton menuButton;
+    @FXML
+    private MenuItem item1;
+    @FXML
+    private MenuItem item2;
+    @FXML
+    private MenuItem item3;
+    @FXML
+    private MenuItem item4;
+    @FXML
+    private String valuemenu = "";
+
+    public void menuList(ActionEvent event) {
+        if (event.getTarget().equals(item1)) {
+            valuemenu = item1.getText();
+            menuButton.setText(valuemenu);
+        } else if (event.getTarget().equals(item2)) {
+            valuemenu = item2.getText();
+            menuButton.setText(valuemenu);
+        } else if (event.getTarget().equals(item3)){
+            valuemenu = item3.getText();
+            menuButton.setText(valuemenu);
+        }
+        else {
+            valuemenu = item4.getText();
+            menuButton.setText(valuemenu);
+        }
+    }
 }
+
+

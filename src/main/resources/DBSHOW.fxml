@@ -3,38 +3,35 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="433.0" prefWidth="600.0" stylesheets="@db.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbshowController">
+<AnchorPane prefHeight="566.0" prefWidth="800.0" stylesheets="@db.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbshowController">
    <children>
-      <TableView fx:id="db" prefHeight="369.0" prefWidth="600.0">
+      <TableView fx:id="db" layoutX="11.0" layoutY="13.0" prefHeight="481.0" prefWidth="778.0">
         <columns>
-          <TableColumn prefWidth="144.0" text="Main">
+          <TableColumn prefWidth="255.0" text="Main">
                   <cellValueFactory>
                       <PropertyValueFactory property="date" />
                   </cellValueFactory>
           </TableColumn>
-          <TableColumn minWidth="6.0" prefWidth="150.0" text="Topic">
+          <TableColumn minWidth="6.0" prefWidth="220.0" text="Topic">
               <cellValueFactory>
                   <PropertyValueFactory property="topic" />
               </cellValueFactory>
           </TableColumn>
-            <TableColumn minWidth="6.0" prefWidth="150.0" text="Date">
+            <TableColumn minWidth="6.0" prefWidth="154.0" text="Date">
                 <cellValueFactory>
                     <PropertyValueFactory property="main" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn minWidth="6.0" prefWidth="150.0" text="id">
+            <TableColumn minWidth="6.0" prefWidth="170.0" text="id">
                 <cellValueFactory>
                     <PropertyValueFactory property="id" />
                 </cellValueFactory>
             </TableColumn>
         </columns>
       </TableView>
-      <Button fx:id="delete" layoutX="355.0" layoutY="380.0" mnemonicParsing="false" onAction="#handdelete" prefHeight="39.0" prefWidth="112.0" text="Delete" />
-      <TextField fx:id="fiew" layoutX="25.0" layoutY="380.0" prefHeight="39.0" prefWidth="324.0" promptText="ID ที่ต้องการลบ " text="" />
-      <Button fx:id="Back" layoutX="467.0" layoutY="380.0" mnemonicParsing="false" onAction="#handback" prefHeight="39.0" prefWidth="112.0" text="Back" />
+      <Button fx:id="Back" layoutX="488.0" layoutY="505.0" mnemonicParsing="false" onAction="#handback" prefHeight="39.0" prefWidth="286.0" text="Back" />
    </children>
 </AnchorPane>
