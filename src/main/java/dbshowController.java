@@ -57,7 +57,7 @@ public class dbshowController implements Initializable {
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("DBSHOW.fxml"));
         try {
-            stage.setScene(new Scene(loader.load(), 800, 566));
+            stage.setScene(new Scene(loader.load(), 1090, 800));
             stage.show();
         } catch (IOException e1) {
             e1.printStackTrace();
