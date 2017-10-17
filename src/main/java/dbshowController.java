@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -63,5 +65,19 @@ public class dbshowController implements Initializable {
             e1.printStackTrace();
         }
     }
+//    @FXML private  TextField textSearch;
+//    public void handleSearchWord(){
+//        List list2 = new ArrayList( );
+//        String keySearch = textSearch.getText();
+//        for (String key : listdb..keySet()){
+//            if (key.equals( keySearch )){
+//                list2.add( listdb.getDictionary2().get( key ) );
+//            }
+//        }
+//        if (!list2.isEmpty()){
+//            ObservableList data = FXCollections.observableArrayList( list2);
+//            db.setItems( data );
+//        }
+//    }
 
 }
