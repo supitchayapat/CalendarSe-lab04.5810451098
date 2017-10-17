@@ -1,6 +1,3 @@
-package controller;
-
-import calendar.Dbshow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,9 +35,9 @@ public class dbshowController implements Initializable {
     public void handback(ActionEvent event){
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Mainn.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "Mainn.fxml" ));
         try {
-            stage.setScene(new Scene(loader.load(), 830, 633));
+            stage.setScene(new Scene(loader.load(), 1090, 700));
             stage.show();
         } catch (IOException e1) {
             e1.printStackTrace();
@@ -58,7 +55,7 @@ public class dbshowController implements Initializable {
         insert.deleteDB( one );
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("DBSHOW.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "DBSHOW.fxml" ));
         try {
             stage.setScene(new Scene(loader.load(), 1090, 800));
             stage.show();

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1090.0" stylesheets="@css/db.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dbshowController">
+<AnchorPane prefHeight="700.0" prefWidth="1090.0" stylesheets="@db.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dbshowController">
     <children>
         <TableView fx:id="db" layoutX="11.0" layoutY="14.0" prefHeight="614.0" prefWidth="1068.0">
             <columns>

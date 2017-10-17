@@ -1,6 +1,3 @@
-package controller;
-
-import calendar.Dbshow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,7 +19,7 @@ public class Controller implements Initializable {
 //    @FXML
 //    private TableView db ;
 //    controller.JdbcSQLiteConnection dbconnect = new controller.JdbcSQLiteConnection();
-//    ObservableList<calendar.Dbshow> listdb  = dbconnect.loadDB();
+//    ObservableList<controller.Dbshow> listdb  = dbconnect.loadDB();
 //    private int one;
 
     @FXML
@@ -83,7 +80,7 @@ public class Controller implements Initializable {
 //    @FXML
 //    private TableView db;
 //    controller.JdbcSQLiteConnection dbconnect = new controller.JdbcSQLiteConnection();
-//    ObservableList<calendar.Dbshow> listdb = dbconnect.loadDB();
+//    ObservableList<controller.Dbshow> listdb = dbconnect.loadDB();
 //    private int one;
     @FXML
     private TableView db ;
@@ -103,7 +100,7 @@ public class Controller implements Initializable {
         eventspeacial.typeevent(valuemenu, onetext, twotext);
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "sample.fxml" ));
         try {
             stage.setScene(new Scene(loader.load(), 1090, 700));
             stage.show();
@@ -119,7 +116,7 @@ public class Controller implements Initializable {
         insert.cleartableDB();
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "sample.fxml" ));
         try {
             stage.setScene(new Scene(loader.load(), 1090, 700));
             stage.show();

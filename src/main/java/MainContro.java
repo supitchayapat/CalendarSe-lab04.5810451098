@@ -1,5 +1,3 @@
-package controller;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +19,7 @@ public class MainContro {
     public void han(ActionEvent event) {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("DBSHOW.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "DBSHOW.fxml" ));
         try {
             stage.setScene(new Scene(loader.load(), 1090, 700));
             stage.show();
@@ -36,7 +34,7 @@ public class MainContro {
     public void hancreatapp(ActionEvent event) {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "sample.fxml" ));
         try {
             stage.setScene(new Scene(loader.load(), 1090, 700));
             stage.show();
