@@ -35,6 +35,6 @@
         </TableView>
         <Button fx:id="Back" layoutX="870.0" layoutY="640.0" mnemonicParsing="false" onAction="#handback" prefHeight="39.0" prefWidth="206.0" text="Back" />
         <TextField fx:id="textSearch"  styleClass="text-input"  layoutX="11.0" layoutY="640.0" prefHeight="39.0" prefWidth="521.0" />
-        <Button layoutX="539.0" layoutY="640.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="94.0" text="Search" />
+        <Button onAction="#handleSearchWord" layoutX="539.0" layoutY="640.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="94.0" text="Search" />
     </children>
 </AnchorPane>

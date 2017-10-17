@@ -137,5 +137,42 @@ public class JdbcSQLiteConnection {
         return 1;
     }
 
+    public ObservableList loadDB(String dateEvent) {
+        ObservableList dataSearch = FXCollections.observableArrayList();
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            String dbURL = "jdbc:sqlite:bookstore.db";
+            Connection conn = DriverManager.getConnection(dbURL);
+            if (conn != null) {
+                System.out.println("Connected to the database....");
+                DatabaseMetaData dm = conn.getMetaData();
+                System.out.println("Driver name: " + dm.getDriverName());
+                System.out.println("Product name: " + dm.getDatabaseProductName());
+                System.out.println("----- Data in Book table -----");
+                String query = "select * from calendardb";
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery(query);
+
+                while(resultSet.next()) {
+                    String date = resultSet.getString(1);
+                    String topic = resultSet.getString(2);
+                    String main = resultSet.getString(3);
+                    int id = resultSet.getInt(4);
+                    if (date.equals( dateEvent )) {
+                        dataSearch.add( new Calendar( date, topic, main, id ) );
+                    }
+                }
+
+                conn.close();
+            }
+        } catch (ClassNotFoundException var12) {
+            var12.printStackTrace();
+        } catch (SQLException var13) {
+            var13.printStackTrace();
+        }
+
+        return dataSearch;
     }
+}
 
