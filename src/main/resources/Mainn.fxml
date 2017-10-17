@@ -7,7 +7,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="566.0" prefWidth="1090.0" stylesheets="@MainCon.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainContro">
+<AnchorPane prefHeight="566.0" prefWidth="1090.0" stylesheets="@css/MainCon.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainContro">
     <children><MenuBar prefHeight="44.0" prefWidth="1090.0">
         <menus>
             <Menu mnemonicParsing="false" text="File">

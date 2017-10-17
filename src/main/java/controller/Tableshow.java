@@ -1,10 +1,11 @@
+package controller;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Tableshow {
 
-    private SimpleStringProperty rWord;
+    private    SimpleStringProperty rWord;
     private   SimpleStringProperty rPartOfSpeech;
     private   SimpleStringProperty rMeaning;
     private   SimpleStringProperty rExample;

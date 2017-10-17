@@ -1,5 +1,6 @@
-import com.sun.org.omg.CORBA.Initializer;
-import javafx.application.Application;
+package controller;
+
+import calendar.Dbshow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,7 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
@@ -21,8 +21,8 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 //    @FXML
 //    private TableView db ;
-//    JdbcSQLiteConnection dbconnect = new JdbcSQLiteConnection();
-//    ObservableList<Dbshow> listdb  = dbconnect.loadDB();
+//    controller.JdbcSQLiteConnection dbconnect = new controller.JdbcSQLiteConnection();
+//    ObservableList<calendar.Dbshow> listdb  = dbconnect.loadDB();
 //    private int one;
 
     @FXML
@@ -79,11 +79,11 @@ public class Controller implements Initializable {
     private Label labelmain;
     @FXML
     private Label labelsub;
-    //    addeventdaily eventspeacial = new addeventdaily();
+    //    controller.addeventdaily eventspeacial = new controller.addeventdaily();
 //    @FXML
 //    private TableView db;
-//    JdbcSQLiteConnection dbconnect = new JdbcSQLiteConnection();
-//    ObservableList<Dbshow> listdb = dbconnect.loadDB();
+//    controller.JdbcSQLiteConnection dbconnect = new controller.JdbcSQLiteConnection();
+//    ObservableList<calendar.Dbshow> listdb = dbconnect.loadDB();
 //    private int one;
     @FXML
     private TableView db ;
