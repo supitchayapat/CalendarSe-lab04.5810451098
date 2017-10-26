@@ -55,6 +55,29 @@ public class Dbshow {
         setTopic( two );
         setMain( three );
 
+//        setDate( one );
+//        setID( four );
+//        setTopic( two );
+//        setMain( three ); setDate( one );
+//        setID( four );
+//        setTopic( two );
+//        setMain( three ); setDate( one );
+//        setID( four );
+//        setTopic( two );
+//        setMain( three ); setDate( one );
+//        setID( four );
+//        setTopic( two );
+//        setMain( three ); setDate( one );
+//        setID( four );
+//        setTopic( two );
+//        setMain( three ); setDate( one );
+//        setID( four );
+//        setTopic( two );
+//        setMain( three ); setDate( one );
+//        setID( four );
+//        setTopic( two );
+//        setMain( three );
+
     }
 
 

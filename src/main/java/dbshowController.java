@@ -43,6 +43,18 @@ public class dbshowController {
             e1.printStackTrace();
         }
 
+
+
+//        Button b = (Button) event.getSource();
+//        Stage stage = (Stage) b.getScene().getWindow();
+//        FXMLLoader loader = new FXMLLoader( getClass().getResource( "Mainn.fxml" ) );
+//        try {
+//            stage.setScene( new Scene( loader.load(), 1090, 700 ) );
+//            stage.show();
+//        } catch (IOException e1) {
+//            e1.printStackTrace();
+//        }
+
     }
 
     @FXML
@@ -57,6 +69,13 @@ public class dbshowController {
         FXMLLoader loader = new FXMLLoader( getClass().getResource( "DBSHOW.fxml" ) );
         stage.setScene( new Scene( loader.load(), 1090, 700 ) );
         stage.show();
+
+
+//        Button b = (Button) event.getSource();
+//        Stage stage = (Stage) b.getScene().getWindow();
+//        FXMLLoader loader = new FXMLLoader( getClass().getResource( "DBSHOW.fxml" ) );
+//        stage.setScene( new Scene( loader.load(), 1090, 700 ) );
+//        stage.show();
     }
 
     @FXML

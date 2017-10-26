@@ -91,6 +91,16 @@ public class JdbcSQLiteConnection {
                 p.executeUpdate();
                 connection.close();
             }
+
+//            Class.forName("org.sqlite.JDBC");
+//            String dbURL = "jdbc:sqlite:bookstore.db";
+//            Connection connection = DriverManager.getConnection(dbURL);
+//            if (connection != null){
+//                String query = "update event set Date=\'" +dateString+ "\' ,Topic=\'" +textTopic+ "\' ,main=\'" +textmain+ "\' where ID == \'" +id+ "\'";
+//                PreparedStatement p = connection.prepareStatement(query);
+//                p.executeUpdate();
+//                connection.close();
+//            }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -128,6 +138,19 @@ public class JdbcSQLiteConnection {
                 int minID = resultSet.getInt(1);
                 connection.close();
                 return  minID+1;
+
+
+//                Class.forName("org.sqlite.JDBC");
+//                String dbURL = "jdbc:sqlite:bookstore.db";
+//                Connection connection = DriverManager.getConnection(dbURL);
+//                if (connection != null){
+//                    String query = "Select max(id) from calendardb";
+//                    Statement statement = connection.createStatement();
+//                    ResultSet resultSet = statement.executeQuery(query);
+//                    int minID = resultSet.getInt(1);
+//                    connection.close();
+//                    return  minID+1;
+
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -153,6 +176,19 @@ public class JdbcSQLiteConnection {
                 String query = "select * from calendardb";
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
+
+//                Class.forName("org.sqlite.JDBC");
+//                String dbURL = "jdbc:sqlite:bookstore.db";
+//                Connection conn = DriverManager.getConnection(dbURL);
+//                if (conn != null) {
+//                    System.out.println("Connected to the database....");
+//                    DatabaseMetaData dm = conn.getMetaData();
+//                    System.out.println("Driver name: " + dm.getDriverName());
+//                    System.out.println("Product name: " + dm.getDatabaseProductName());
+//                    System.out.println("----- Data in Book table -----");
+//                    String query = "select * from calendardb";
+//                    Statement statement = conn.createStatement();
+//                    ResultSet resultSet = statement.executeQuery(query);
 
                 while(resultSet.next()) {
                     String date = resultSet.getString(1);
