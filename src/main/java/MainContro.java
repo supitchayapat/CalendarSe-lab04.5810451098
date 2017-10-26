@@ -59,6 +59,23 @@ public class MainContro {
     public void onActionButtonOne(ActionEvent event) {
     }
 
-    public void onActionButtonFour(ActionEvent event) {
-    }
+//    public void onActionButtonFour(ActionEvent event) {
+//    }
+//    public void onActionButtonTwo(ActionEvent event) {
+//    }
+//
+//    public void onActionButtonFive(ActionEvent event) {
+//    }
+//
+//    public void onActionButtonThree(ActionEvent event) {
+//    }
+//
+//    public void onActionButtonSix(ActionEvent event) {
+//    }
+//
+//    public void onActionButtonOne(ActionEvent event) {
+//    }
+//
+//    public void onActionButtonFour(ActionEvent event) {
+//    }
 }
