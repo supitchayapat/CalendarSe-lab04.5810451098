@@ -30,6 +30,12 @@
         <Label fx:id="image" layoutX="369.0" layoutY="70.0" prefHeight="346.0" prefWidth="379.0" />
         <Button fx:id="addle" layoutX="323.0" layoutY="616.0" mnemonicParsing="false" onAction="#han" prefHeight="54.0" prefWidth="179.0" text="View/Delete" />
         <Button fx:id="creat" layoutX="581.0" layoutY="609.0" mnemonicParsing="false" onAction="#hancreatapp" prefHeight="54.0" prefWidth="179.0" text="Create" />
+        <Button layoutX="132.0" layoutY="609.0" mnemonicParsing="false" onAction="#onActionButtonTwo" text="Button"/>
+        <Button layoutX="132.0" layoutY="640.0" mnemonicParsing="false" onAction="#onActionButtonFive" text="Button"/>
+        <Button layoutX="197.0" layoutY="609.0" mnemonicParsing="false" onAction="#onActionButtonThree" text="Button"/>
+        <Button layoutX="197.0" layoutY="640.0" mnemonicParsing="false" onAction="#onActionButtonSix" text="Button"/>
+        <Button layoutX="67.0" layoutY="609.0" mnemonicParsing="false" onAction="#onActionButtonOne" text="Button"/>
+        <Button layoutX="67.0" layoutY="640.0" mnemonicParsing="false" onAction="#onActionButtonFour" text="Button"/>
 
     </children>
 
