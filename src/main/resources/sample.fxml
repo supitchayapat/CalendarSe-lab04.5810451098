@@ -12,41 +12,41 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1090.0" stylesheets="@Controller.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1090.0" stylesheets="@Controller.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
     <children>
         <DatePicker fx:id="datePicker" layoutX="10.0" layoutY="223.0" prefHeight="44.0" prefWidth="217.0" promptText=" Year/Month/Date " />
-        <TextField fx:id="texttwo" alignment="TOP_LEFT" depthTest="DISABLE" layoutX="10.0" layoutY="284.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="194.0" prefWidth="537.0" promptText="เนื้อหานัดหมาย ">
+        <TextField fx:id="texttwo" alignment="TOP_LEFT" depthTest="DISABLE" layoutX="10.0" layoutY="284.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="256.0" prefWidth="537.0" promptText="Event ">
             <cursor>
                 <Cursor fx:constant="OPEN_HAND" />
             </cursor>
         </TextField>
-        <TextField fx:id="textone" layoutX="241.0" layoutY="223.0" prefHeight="44.0" prefWidth="302.0" promptText="หัวข้อนัดหมายงาน" />
-        <TableView fx:id="db" layoutX="569.0" layoutY="115.0" prefHeight="363.0" prefWidth="508.0">
+        <TextField fx:id="textone" layoutX="241.0" layoutY="223.0" prefHeight="44.0" prefWidth="302.0" promptText="Topic" />
+        <TableView fx:id="db" layoutX="569.0" layoutY="34.0" prefHeight="449.0" prefWidth="508.0">
             <columns>
                 <TableColumn prefWidth="85.0" text="Date">
                     <cellValueFactory>
                         <PropertyValueFactory property="date" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn minWidth="6.0" prefWidth="97.0" text="Topic">
+                <TableColumn minWidth="6.0" prefWidth="164.0" text="Topic">
                     <cellValueFactory>
                         <PropertyValueFactory property="topic" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn minWidth="6.0" prefWidth="89.0" text="Main">
+                <TableColumn minWidth="6.0" prefWidth="168.0" text="Main">
                     <cellValueFactory>
                         <PropertyValueFactory property="main" />
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn minWidth="6.0" prefWidth="101.0" text="id">
+                <TableColumn minWidth="6.0" prefWidth="90.0" text="id">
                     <cellValueFactory>
                         <PropertyValueFactory property="id" />
                     </cellValueFactory>
                 </TableColumn>
             </columns>
         </TableView>
-        <Button layoutX="568.0" layoutY="489.0" mnemonicParsing="false" onAction="#handClearTable" prefHeight="51.0" prefWidth="508.0" text="Delete All" />
-        <MenuButton fx:id="menuButton" layoutX="8.0" layoutY="489.0" onAction="#menuList" prefHeight="51.0" prefWidth="537.0" text="เลือกวิธีการแจ้งเตือน">
+        <Button layoutX="569.0" layoutY="598.0" mnemonicParsing="false" onAction="#handClearTable" prefHeight="51.0" prefWidth="508.0" text="Delete All" />
+        <MenuButton fx:id="menuButton" layoutX="10.0" layoutY="545.0" onAction="#menuList" prefHeight="51.0" prefWidth="537.0" text="notification">
             <items>
                 <MenuItem fx:id="item1" mnemonicParsing="false" onAction="#menuList" text="Every Week" />
                 <MenuItem fx:id="item2" mnemonicParsing="false" onAction="#menuList" text="Every Month" />
@@ -62,8 +62,10 @@
             </items>
         </MenuButton>
 
-      <TextField layoutX="568.0" layoutY="56.0" prefHeight="44.0" prefWidth="508.0" />
       <Label layoutX="126.0" layoutY="30.0" prefHeight="171.0" prefWidth="324.0" styleClass="showImage" />
+      <Button layoutX="569.0" layoutY="493.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="508.0" text="Search" />
+      <Button layoutX="569.0" layoutY="545.0" mnemonicParsing="false" onAction="#btnshowevent" prefHeight="44.0" prefWidth="508.0" text="Show Event" />
+      <Button layoutX="10.0" layoutY="602.0" mnemonicParsing="false" onAction="#btnAddEvent" prefHeight="44.0" prefWidth="537.0" text="ADD" />
 
     </children>
 </AnchorPane>

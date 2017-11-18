@@ -182,6 +182,50 @@ public class Controller implements Initializable {
             menuButton.setText(valuemenu);
         }
     }
+    //SearcjhEven
+    @FXML
+    public void btnSearch(ActionEvent event) {
+        Button b = (Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "Search.fxml" ));
+        try {
+            stage.setScene(new Scene(loader.load(), 1090, 700));
+            stage.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+@FXML
+    public void btnshowevent(ActionEvent event) {
+        Button b = (Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "DBSHOW.fxml" ));
+        try {
+            stage.setScene(new Scene(loader.load(), 1090, 700));
+            stage.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    public void btnAddEvent(ActionEvent event) {
+        addeventdaily eventspeacial = new addeventdaily();
+        onetext = textone.getText();
+        twotext = texttwo.getText();
+        String datevalu = String.valueOf(datePicker.getValue());
+
+        eventspeacial.datepickevent( datevalu );
+        eventspeacial.typeevent(valuemenu, onetext, twotext);
+        Button b = (Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "sample.fxml" ));
+        try {
+            stage.setScene(new Scene(loader.load(), 1090, 700));
+            stage.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
 }
 
 

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1090.0" stylesheets="@MainCon.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainContro">
+<AnchorPane prefHeight="700.0" prefWidth="1090.0" stylesheets="@MainCon.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainContro">
     <children><MenuBar prefHeight="44.0" prefWidth="1090.0">
         <menus>
             <Menu mnemonicParsing="false" text="File">
@@ -27,15 +27,11 @@
             </Menu>
         </menus>
     </MenuBar>
-        <Label fx:id="image" layoutX="369.0" layoutY="70.0" prefHeight="346.0" prefWidth="379.0" />
-        <Button fx:id="addle" layoutX="323.0" layoutY="616.0" mnemonicParsing="false" onAction="#han" prefHeight="54.0" prefWidth="179.0" text="View/Delete" />
-        <Button fx:id="creat" layoutX="581.0" layoutY="609.0" mnemonicParsing="false" onAction="#hancreatapp" prefHeight="54.0" prefWidth="179.0" text="Create" />
-        <Button layoutX="132.0" layoutY="609.0" mnemonicParsing="false" onAction="#onActionButtonTwo" text="Button"/>
-        <Button layoutX="132.0" layoutY="640.0" mnemonicParsing="false" onAction="#onActionButtonFive" text="Button"/>
-        <Button layoutX="197.0" layoutY="609.0" mnemonicParsing="false" onAction="#onActionButtonThree" text="Button"/>
-        <Button layoutX="197.0" layoutY="640.0" mnemonicParsing="false" onAction="#onActionButtonSix" text="Button"/>
-        <Button layoutX="67.0" layoutY="609.0" mnemonicParsing="false" onAction="#onActionButtonOne" text="Button"/>
-        <Button layoutX="67.0" layoutY="640.0" mnemonicParsing="false" onAction="#onActionButtonFour" text="Button"/>
+        <Label fx:id="image" layoutX="248.0" layoutY="76.0" prefHeight="517.0" prefWidth="594.0" />
+        <Button fx:id="addle" layoutX="241.0" layoutY="609.0" mnemonicParsing="false" onAction="#han" prefHeight="54.0" prefWidth="179.0" text="View/Delete" />
+        <Button fx:id="creat" layoutX="438.0" layoutY="609.0" mnemonicParsing="false" onAction="#hancreatapp" prefHeight="54.0" prefWidth="179.0" text="Create" />
+      <Button layoutX="626.0" layoutY="609.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="179.0" text="Search" onAction="#btnSearch"/>
+
 
     </children>
 

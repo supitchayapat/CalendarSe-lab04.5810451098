@@ -16,10 +16,9 @@ import java.util.ResourceBundle;
 
 
 public class dbshowController {
-    @FXML
-    private TableView db;
-    JdbcSQLiteConnection dbconnect = new JdbcSQLiteConnection();
-    ObservableList<Dbshow> listdb = dbconnect.loadDB();
+    @FXML private TableView db;
+
+    ObservableList<Dbshow> listdb = MainContro.loads.loadDB();
 
     ObservableList<Dbshow> data = FXCollections.observableArrayList();
 
@@ -82,9 +81,9 @@ public class dbshowController {
     private TextField textSearch;
 
     public void handleSearchWord(ActionEvent event) throws IOException {
-        listdb  = dbconnect.loadDB( textSearch.getText() );
-        System.out.println(listdb);
-        db.setItems( listdb );
+        data  = MainContro.loads.searchEvent( textSearch.getText() );
+        System.out.println(data);
+        db.setItems( data );
 
     }
 

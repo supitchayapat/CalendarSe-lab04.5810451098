@@ -160,7 +160,7 @@ public class JdbcSQLiteConnection {
         return 1;
     }
 
-    public ObservableList loadDB(String dateEvent) {
+    public ObservableList searchEvent(String textSearch){
         ObservableList dataSearch = FXCollections.observableArrayList();
 
         try {
@@ -169,33 +169,15 @@ public class JdbcSQLiteConnection {
             Connection conn = DriverManager.getConnection(dbURL);
             if (conn != null) {
                 System.out.println("Connected to the database....");
-                DatabaseMetaData dm = conn.getMetaData();
-                System.out.println("Driver name: " + dm.getDriverName());
-                System.out.println("Product name: " + dm.getDatabaseProductName());
-                System.out.println("----- Data in Book table -----");
                 String query = "select * from calendardb";
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
-
-//                Class.forName("org.sqlite.JDBC");
-//                String dbURL = "jdbc:sqlite:bookstore.db";
-//                Connection conn = DriverManager.getConnection(dbURL);
-//                if (conn != null) {
-//                    System.out.println("Connected to the database....");
-//                    DatabaseMetaData dm = conn.getMetaData();
-//                    System.out.println("Driver name: " + dm.getDriverName());
-//                    System.out.println("Product name: " + dm.getDatabaseProductName());
-//                    System.out.println("----- Data in Book table -----");
-//                    String query = "select * from calendardb";
-//                    Statement statement = conn.createStatement();
-//                    ResultSet resultSet = statement.executeQuery(query);
-
                 while(resultSet.next()) {
                     String date = resultSet.getString(1);
                     String topic = resultSet.getString(2);
                     String main = resultSet.getString(3);
                     int id = resultSet.getInt(4);
-                    if (date.equals( dateEvent )) {
+                    if (topic.equals( textSearch ) || main.equals( textSearch )) {
                         dataSearch.add( new Calendar( date, topic, main, id ) );
                     }
                 }

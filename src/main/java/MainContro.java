@@ -1,3 +1,4 @@
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class MainContro {
+
+    static JdbcSQLiteConnection loads = new JdbcSQLiteConnection();
+
     @FXML
     private Button addle;
     @FXML
@@ -57,6 +61,18 @@ public class MainContro {
     }
 
     public void onActionButtonOne(ActionEvent event) {
+    }
+
+    public void btnSearch(ActionEvent event) {
+        Button b = (Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource( "Search.fxml" ));
+        try {
+            stage.setScene(new Scene(loader.load(), 1090, 700));
+            stage.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
     }
 
 //    public void onActionButtonFour(ActionEvent event) {
